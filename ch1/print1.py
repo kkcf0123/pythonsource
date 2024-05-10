@@ -1,26 +1,26 @@
 # 함수 : print(출력할 문장) = sout()
 # 문자 : '' or "" 가능
-print('Hello Python!')
+print("Hello Python!")
 print("Hello Python!")
 print(100)
 print("100")
 print(25.3)
 print("25.3")
 # type()
-print(type("Hello Python!")) # <class 'str'> 
-print(type(100)) # <class 'int'>  
-print(type(25.3)) # <class 'float'>
-print(type(True)) # <class 'bool'> 
+print(type("Hello Python!"))  # <class 'str'>
+print(type(100))  # <class 'int'>
+print(type(25.3))  # <class 'float'>
+print(type(True))  # <class 'bool'>
 
-print("T","E","S","T") # T E S T
+print("T", "E", "S", "T")  # T E S T
 
 # print() 에 사용하는 옵션
 # sep : 문자열 출력 시 기본 구분은 스페이스바 한 번
-print("T","E","S","T",sep="") # TEST
-print("2024","05","09",sep="-") # 2024-05-09
+print("T", "E", "S", "T", sep="")  # TEST
+print("2024", "05", "09", sep="-")  # 2024-05-09
 
 # end : print() 줄바꿈 기본
-print("Welcome to", end=" ") # Welcome to 안녕하세요
+print("Welcome to", end=" ")  # Welcome to 안녕하세요
 print("안녕하세요")
 
 # formating : %d, %s(만능), %f, %c
@@ -56,15 +56,15 @@ print("Error is %d%%" % 98)
 
 print()
 # format() : 포맷코드와 유사한 역할
-print("I eat {} apples".format(3)) # 0~3
-print("{} and {}".format("you","me"))
+print("I eat {} apples".format(3))  # 0~3
+print("{} and {}".format("you", "me"))
 
 # 인덱스 위치값 사용
 print("I eat {0} apples".format(3))
-print("{0} and {1} and {0}".format("you","me"))
+print("{0} and {1} and {0}".format("you", "me"))
 
 # format() + 인덱스 + 이름
-print("{var1} and {var2}".format(var1="You",var2="niceman"))
+print("{var1} and {var2}".format(var1="You", var2="niceman"))
 print("I ate {0} apples. so I was sick for {day} days".format(10, day=3))
 
 # format() + 인덱스 + 정렬
@@ -75,12 +75,12 @@ print("{0:>10}".format("hi"))
 # 가운데 정렬
 print("{0:^10}".format("hi"))
 # {} 사용 시 % 대신 자릿값만 사용
-print("Test: {0:5d}, Price: {1: 4.2f}".format(776,6534.123))
+print("Test: {0:5d}, Price: {1: 4.2f}".format(776, 6534.123))
 
 # f 문자열 포매팅
 name = "홍길동"
 age = 30
-print(f'나의 이름은 {name} 입니다. 나이는 {age} 입니다.')
+print(f"나의 이름은 {name} 입니다. 나이는 {age} 입니다.")
 
 print("\n줄바꿈\n연습")
 print("\t탭\t연습")
