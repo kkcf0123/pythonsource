@@ -73,3 +73,154 @@ if no % 2 == 1:
 else:
     print("여자")
 # %%
+str1 = "파이썬프로그래밍"
+# ♥
+for s in str1:
+    print(s + "♥", end="")
+
+# %%
+# 사용자로부터 숫자 입력 받기 → 5
+num = input("숫자 입력")
+for i in range(len(num)):
+    for j in range(int(num[i])):
+        print("♥",end="")
+    print()
+
+# %%
+# 문자열 함수
+# 1) count()
+str1 = "hobby"
+print("a 문자열에 포함된 b 개수 %d" % str1.count("b"))
+
+# %%
+# 2) find()
+str1 = "Python is the best choice"
+print("a 문자열에 b 위치 %d" % str1.find("b"))
+print("a 문자열에 b 위치 {}".format(str1.find("b")))
+print(f"a 문자열에 b 위치 {str1.find("b")}")
+print("a 문자열에 b 위치 ", str1.find("b"))
+
+# %%
+# 3) index() : 문자열 위치
+print("a 문자열에 b 위치 %d" % str1.index("b"))
+
+# %%
+# find() vs index()
+# 존재하지 않는 경우 -1 vs ValueError
+
+# index → 못 찾으면 에러 발생 → * ValueError: substring not found
+# print("a 문자열에 b 위치 %d" % str1.index("K"))
+
+# find 는 못 찾으면 -1
+print("a 문자열에 b 위치 %d" % str1.find("K"))
+
+# %%
+# 4) startswith / endswith
+str2 = "Python Is Easy Programming"
+print(str2.startswith("P"))
+print(str2.endswith("P"))
+
+# %%
+# 5) join()
+# 리스트나 튜플 문자열로 변경 시 많이 사용됨
+",".join("abcdefg")
+
+list1 = ["a", "b", "c", "d", "e"]
+print("".join(list1))
+
+# %%
+# 6) upper / lower /swapcase / title : 대소문자 변경
+a = "abcde"
+print("소문자 → 대문자 ", a.upper())
+
+a = "ABCDE"
+print("대문자 → 소문자 ", a.lower())
+
+a = "Python is Easy"
+print("대문자 소문자 상호 변환 ", a.swapcase())
+
+a = "python is easy"
+print("단어의 제일 앞 글자 대문자 변환 ", a.title())
+
+# %%
+# python 대소문자 구별 함
+"abc" == "ABC"
+
+# %%
+# 7) lstrip / rstrip / strip : 공백 제거
+a = "    hi"
+print(a)
+print(a.lstrip())
+
+a = "hi      "
+print(a)
+print(a.lstrip())
+
+a = "    hi    "
+print(a)
+print(a.lstrip())
+
+# %%
+# 8) replace()
+a = "Life is too short"
+a.replace("Life", "Your leg")
+
+# %%
+# 9) split() : 문자열 나누기
+print(a.split()) # 공백 기준 나누기
+
+b = "a:b:c:d"
+print(b.split(":"))
+
+# %%
+# 10) splitlines() : 엔터 기준 나누기
+c = "하나\n둘\n셋"
+print(c.splitlines())
+print(c.split("\n"))
+
+# %%
+# 11) is~ : True, False 로 결과 나옴 (문자열 구성 파악)
+print("1234".isdigit())
+print("abcd".isalpha())
+print("abc123".isalnum())
+print("abcd".islower())
+print("ABCD".isupper())
+print("   ".isspace())
+
+# %%
+# 대 ↔ 소
+name = "KennyRY"
+print(name.swapcase())
+
+for s in name:
+    if s.islower():
+        print(s.upper(), end="")
+    else:
+        print(s.lower(), end="")
+
+# %%
+# 연월일 입력 받은 후 10년 후 날짜 출력
+# 2024/05/13 (입력예시)
+date1 = input("날짜입력(연/월/일)")
+pos = date1.find("/")
+year = int(date1[:pos]) + 10
+
+print("입력한 날짜의 10년 후 %s" % (str(year) + "년" + date1[5:7] + "월" + date1[8:] + "일"))
+
+# 두번째
+date1 = date1.split("/") # ['2024', '05', '13']
+print("입력한 날짜의 10년 후 %s" % (str(int(date1[0]+10)+"년"+date1[1])+"월"+date1[2])+"일")
+
+# %%
+# 사이트별 비밀번호 작성
+# http://naver.com
+# 규칙1) http:// 제외 : naver.com
+# 규칙2) 처음에 나오는 . 이후 부분 제외 : naver
+# 규칙3) 남은 글자 중 처음 세자리 + 글자 개수 + 글자 내 'e' 문자 개수 + '!' 로 구성 : nav51!
+url = "http://naver.com"
+data = url[7:]
+data = data[:data.find(".")]
+result = data[:3] + str(len(data)) + str(data.count("e")) + "!"
+print(result)
+
+# %%
