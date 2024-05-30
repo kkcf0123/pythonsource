@@ -5,6 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.error import HTTPError
 from openpyxl import Workbook
+import re
 
 wb = Workbook()
 ws = wb.active
@@ -15,7 +16,6 @@ ws.column_dimensions["C"].width = 60
 
 ws.append(["순위", "상품명", "판매경로"])
 
-url = "https://openapi.naver.com/v1/search/shop.json"
 
 headers = {
     "X-Naver-Client-Id": "EHklZTF7Z3z8fDw0pj7Y",
@@ -27,10 +27,11 @@ start, num = 1, 0
 for idx in range(10):
     # idx : 0~9
     start_num = start + (idx * 100)
+    url = "https://openapi.naver.com/v1/search/shop.json"
     params = {"query": "아이폰", "display": "100", "start": str(start_num)}
     r = requests.get(url, headers=headers, params=params)
 
-    print(r.url)
+    # print(r.url)
 
     # json 가져오기
     data = r.json()
@@ -40,7 +41,8 @@ for idx in range(10):
     # print(data["items"])
     for idx, item in enumerate(data["items"], 1):
         # print(idx, item["title"], item["link"])  # <b>아이폰</b> title 태그 제거
-        ws.append([num, item["title"], item["link"]])
+        title = re.sub("<.*?>", "", item["title"])
+        ws.append([num, title, item["link"]])
         num += 1
 
 base_dir = "./crawl/file/"
