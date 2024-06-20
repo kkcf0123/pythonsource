@@ -2,7 +2,6 @@
 # 문자 처리
 # 문자, 문자열 구분 안 함 : 쌍따옴표, 홑따옴표 허용, 3개
 # "Life is too short, You need Python"
-# "Life is too short, You need Python"
 # '''Life is too short, You need Python'''
 # """Life is too short, You need Python"""
 

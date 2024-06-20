@@ -1,7 +1,7 @@
 # %%
 # 숫자, 문자열
 
-# 데이터 모임 표현 : list(== ArrayList(배열)), disst(== Map), set( == HashSet), tuple()
+# 데이터 모임 표현 : list(== ArrayList(배열)), dict(== Map), set( == HashSet), tuple()
 # 동일한 타입만을 담지 않음
 
 # %%
